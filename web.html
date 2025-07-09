@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic SEO Tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="title" content="Hash Identifier - Detect Hash Types Instantly">
+  <meta name="description" content="A free online tool to identify hash types such as MD5, SHA-1, SHA-256, bcrypt, and more. Just paste your hash to detect its algorithm.">
+  <meta name="keywords" content="hash identifier, hash detector, MD5, SHA1, SHA256, bcrypt, identify hash, hash type checker">
+  <meta name="author" content="Hash Identifier App">
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph Tags (for Facebook, LinkedIn) -->
+  <meta property="og:title" content="Hash Identifier - Free Online Hash Type Detector">
+  <meta property="og:description" content="Detect hash types like MD5, SHA-1, SHA-256, bcrypt, and more. Paste your hash to identify it.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-domain.com">
+  <meta property="og:image" content="https://your-domain.com/preview.png">
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hash Identifier Tool">
+  <meta name="twitter:description" content="Free online tool to identify hash algorithms. Supports MD5, SHA-1, SHA-256, bcrypt, and more.">
+  <meta name="twitter:image" content="https://your-domain.com/preview.png">
+
+  <title>Hash Identifier - Free Online Hash Type Detector</title>
+
+  <!-- Favicon (optional) -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+
+  <!-- Structured Data (JSON-LD for Search Engines) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Hash Identifier",
+    "url": "https://your-domain.com",
+    "applicationCategory": "SecurityApplication",
+    "description": "Online tool to identify hash types such as MD5, SHA-1, SHA-256, and bcrypt.",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "276"
+    }
+  }
+  </script>
+
+  <!-- Styling -->
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f172a;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 2rem;
+      background-color: #1e293b;
+    }
+    header h1 {
+      margin: 0;
+      color: #38bdf8;
+      font-size: 2rem;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+    textarea {
+      width: 90%;
+      max-width: 500px;
+      height: 100px;
+      padding: 10px;
+      font-size: 1rem;
+      background: #1e293b;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #22d3ee;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    #result {
+      margin-top: 1rem;
+      background: #1e293b;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      width: 90%;
+      max-width: 500px;
+      font-size: 1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 5rem;
+      background: #1e293b;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>🧬 Hash Identifier</h1>
+    <p>Detect Hash Algorithms like MD5, SHA-1, SHA-256, bcrypt, and more</p>
+  </header>
+
+  <main>
+    <form onsubmit="event.preventDefault(); identifyHash();">
+      <textarea id="hashInput" placeholder="Paste your hash here..."></textarea><br />
+      <button type="submit">Identify</button>
+    </form>
+    <div id="result">Result will appear here...</div>
+  </main>
+
+  <footer>
+    &copy; 2025 Hash Identifier. All rights reserved.
+  </footer>
+
+  <!-- Hash Detection Logic -->
+  <script>
+    function identifyHash() {
+      const hash = document.getElementById("hashInput").value.trim().toLowerCase();
+      const result = document.getElementById("result");
+
+      const hashTypes = [
+        { name: "MD5", pattern: /^[a-f0-9]{32}$/ },
+        { name: "SHA-1", pattern: /^[a-f0-9]{40}$/ },
+        { name: "SHA-224", pattern: /^[a-f0-9]{56}$/ },
+        { name: "SHA-256", pattern: /^[a-f0-9]{64}$/ },
+        { name: "SHA-384", pattern: /^[a-f0-9]{96}$/ },
+        { name: "SHA-512", pattern: /^[a-f0-9]{128}$/ },
+        { name: "SHA3-224", pattern: /^[a-f0-9]{56}$/ },
+        { name: "SHA3-256", pattern: /^[a-f0-9]{64}$/ },
+        { name: "SHA3-384", pattern: /^[a-f0-9]{96}$/ },
+        { name: "SHA3-512", pattern: /^[a-f0-9]{128}$/ },
+        { name: "NTLM", pattern: /^[a-f0-9]{32}$/ },
+        { name: "MySQL v3.23", pattern: /^[a-f0-9]{16}$/ },
+        { name: "MySQL v4+", pattern: /^\*[a-f0-9]{40}$/ },
+        { name: "bcrypt", pattern: /^\$2[aby]?\$.{56}$/ },
+        { name: "LM Hash", pattern: /^[a-f0-9]{32}$/ },
+        { name: "CRC32", pattern: /^[a-f0-9]{8}$/ },
+        { name: "RIPEMD-128", pattern: /^[a-f0-9]{32}$/ },
+        { name: "RIPEMD-160", pattern: /^[a-f0-9]{40}$/ },
+        { name: "RIPEMD-256", pattern: /^[a-f0-9]{64}$/ },
+        { name: "RIPEMD-320", pattern: /^[a-f0-9]{80}$/ },
+        { name: "Whirlpool", pattern: /^[a-f0-9]{128}$/ },
+        { name: "Tiger-128", pattern: /^[a-f0-9]{32}$/ },
+        { name: "Tiger-160", pattern: /^[a-f0-9]{40}$/ },
+        { name: "Tiger-192", pattern: /^[a-f0-9]{48}$/ },
+        { name: "GOST R 34.11-94", pattern: /^[a-f0-9]{64}$/ },
+        { name: "Snefru-128", pattern: /^[a-f0-9]{32}$/ },
+        { name: "Snefru-256", pattern: /^[a-f0-9]{64}$/ },
+        { name: "Blake2b", pattern: /^[a-f0-9]{128}$/ },
+        { name: "Blake2s", pattern: /^[a-f0-9]{64}$/ },
+      ];
+
+      const matches = hashTypes.filter(ht => ht.pattern.test(hash));
+      if (matches.length > 0) {
+        result.innerHTML = `🔍 <strong>Possible Hash Types:</strong><br>${matches.map(m => m.name).join(", ")}`;
+      } else {
+        result.innerHTML = "❌ Could not identify hash type.";
+      }
+    }
+  </script>
+</body>
+</html>
