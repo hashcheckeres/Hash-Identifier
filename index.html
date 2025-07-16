@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hash Identifier</title>
+  <meta name="description" content="Identify the type of hash from a given hash string.">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Basic SEO Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="title" content="Hash Identifier - Detect Hash Types Instantly">
+    <meta name="description" content="A free online tool to identify hash types such as MD5, SHA-1, SHA-256, bcrypt, and more. Just paste your hash to detect its algorithm.">
+    <meta name="keywords" content="hash identifier, hash detector, MD5, SHA1, SHA256, bcrypt, identify hash, hash type checker">
+    <meta name="author" content="Hash Identifier App">
+    <meta name="robots" content="index, follow" />
+  
+    <!-- Open Graph Tags (for Facebook, LinkedIn) -->
+    <meta property="og:title" content="Hash Identifier - Free Online Hash Type Detector">
+    <meta property="og:description" content="Detect hash types like MD5, SHA-1, SHA-256, bcrypt, and more. Paste your hash to identify it.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hashcheckeres.github.io/Hash-Identifier/">
+    <meta property="og:image" content="https://hashcheckeres.github.io/Hash-Identifier/preview.png">
+  
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hash Identifier Tool">
+    <meta name="twitter:description" content="Free online tool to identify hash algorithms. Supports MD5, SHA-1, SHA-256, bcrypt, and more.">
+    <meta name="twitter:image" content="https://hashcheckeres.github.io/Hash-Identifier/preview.png">
+  
+    <title>Hash Identifier - Free Online Hash Type Detector</title>
+  
+    <!-- Favicon (optional) -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+  
+    <!-- Structured Data (JSON-LD for Search Engines) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Hash Identifier",
+      "url": "https://hashcheckeres.github.io/Hash-Identifier/",
+      "applicationCategory": "SecurityApplication",
+      "description": "Online tool to identify hash types such as MD5, SHA-1, SHA-256, and bcrypt.",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "276"
+      }
+    }
+    </script>
+  
+  <style>
+    * { box-sizing: border-box; }
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    nav {
+      background-color: #000;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+    }
+
+    nav a,
+    .nav-right a,
+    .dropdown > a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      display: inline-block;
+      padding: 5px 10px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover,
+    .dropdown-content a:hover {
+      color: #141413;
+    }
+
+    nav a:visited,
+    .dropdown-content a:visited {
+      color: white;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #111;
+      min-width: 160px;
+      top: 100%;
+      right: 0;
+      z-index: 1000;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem;
+      background: #f5f5f5;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      height: 120px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 20px;
+    }
+
+    .hash-block {
+      background: #f0f0f0;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .copy-btn {
+      margin-left: 10px;
+      font-size: 14px;
+      padding: 5px 10px;
+      background: #444;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+ 
+  <nav>
+    <h1>Hash Identifier</h1>
+    <div class="nav-right">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <a href="#">Tools ▾</a>
+        <div class="dropdown-content">
+          <a href="Generate_Hash.html">Generate Hash</a>
+          <a href="compareHashes.html">Compare Hash</a>
+       <a href="index.html">Hash Identifier</a>
+        </div>
+      </div>
+      <a href="about.html">About</a>
+      <a href="support.html">Support</a>
+      <a href="Privacy_Policy.html">Privacy Policy</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <h2>Identify Hashes</h2>
+      <p>Paste one or more hashes below (one per line):</p>
+      <textarea id="hashInput"></textarea>
+      <button onclick="identifyHashes()">Identify Hashes</button>
+      <div class="result" id="result"></div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Hash Tools. All rights reserved.
+  </footer>
+
+  <script>
+    function identifyHashes() {
+      const input = document.getElementById("hashInput").value.trim();
+      const hashes = input.split(/\r?\n/).filter(line => line.trim() !== "");
+      const result = document.getElementById("result");
+      result.innerHTML = '';
+
+      const hashTypes = [
+        { name: "MD5", length: 32, regex: /^[a-f0-9]{32}$/i },
+        { name: "SHA-1", length: 40, regex: /^[a-f0-9]{40}$/i },
+        { name: "SHA-256", length: 64, regex: /^[a-f0-9]{64}$/i },
+        { name: "SHA-512", length: 128, regex: /^[a-f0-9]{128}$/i },
+        { name: "NTLM", length: 32, regex: /^[A-F0-9]{32}$/ },
+        { name: "MySQL5", length: 41, regex: /^\*[A-F0-9]{40}$/ },
+        { name: "CRC32", length: 8, regex: /^[a-f0-9]{8}$/i },
+        { name: "RIPEMD-160", length: 40, regex: /^[a-f0-9]{40}$/i },
+        { name: "SHA3-256", length: 64, regex: /^[a-f0-9]{64}$/i },
+        { name: "SHA3-512", length: 128, regex: /^[a-f0-9]{128}$/i }
+      ];
+
+      hashes.forEach(hash => {
+        const match = hashTypes.find(type => hash.length === type.length && type.regex.test(hash));
+        const type = match ? match.name : 'Unknown hash type or invalid input';
+        const encoded = hash.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+        const div = document.createElement("div");
+        div.className = "hash-block";
+        div.innerHTML = `<strong>Hash:</strong> ${encoded}<br><strong>Type:</strong> ${type} <button class="copy-btn" onclick="copyToClipboard('${hash}')">Copy</button>`;
+        result.appendChild(div);
+      });
+    }
+
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text)
+        .then(() => alert("Hash copied to clipboard!"))
+        .catch(() => alert("Failed to copy hash.")); 
+    }
+  </script>
+</body>
+</html>

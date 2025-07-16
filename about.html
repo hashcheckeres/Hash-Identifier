@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Hash Identifier is a free web tool to identify, compare, and generate hash values including MD5, SHA1, SHA256, and more. Learn how it works.">
+  <meta name="keywords" content="hash identifier, md5, sha1, sha256, hash tool, hash generator, hash comparison, cryptography">
+  <meta name="author" content="Hash Identifier Team">
+  <title>About - Hash Identifier Tool</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #fff;
+      color: #333;
+    }
+
+    nav {
+      background-color: #000;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      display: block;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #333;
+    }
+
+    /* Dropdown */
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #111;
+      border-radius: 5px;
+      min-width: 160px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    nav ul li:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown a {
+      padding: 10px 15px;
+      white-space: nowrap;
+    }
+
+    /* Responsive navbar toggle (hamburger) */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        background-color: #000;
+        margin-top: 15px;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav ul li:hover .dropdown {
+        position: relative;
+        box-shadow: none;
+      }
+
+      .dropdown {
+        width: 100%;
+      }
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 50px 20px;
+    }
+
+    h1 {
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    p {
+      font-size: 17px;
+      margin-bottom: 20px;
+    }
+
+    ul.features {
+      list-style: square inside;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+
+    footer {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      margin-top: 50px;
+    }
+  </style>
+  <script>
+    // Toggle for mobile menu
+    function toggleMenu() {
+      const navList = document.querySelector('nav ul');
+      navList.classList.toggle('show');
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Hash Identifier</div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <a href="#">Tools ▾</a>
+        <div class="dropdown">
+          <a href="Generate_Hash.html">Generate Hash</a>
+          <a href="compareHashes.html">Compare Hash</a>
+          <a href="index.html">Hash Identifier</a>
+        </div>
+      </li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="Privacy_Policy.html">Privacy Policy</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+    <h1>About Hash Identifier</h1>
+    <p><strong>Hash Identifier</strong> is a fast, privacy-friendly web tool that helps you detect, compare, and generate various types of hash values. Built for developers, security researchers, and everyday users, this tool supports all major hashing algorithms including MD5, SHA1, SHA256, and more.</p>
+
+    <p>Instead of guessing or manually comparing hash lengths and formats, you can simply paste a hash and instantly get the most likely hash type based on patterns and length. You can also generate your own hashes or compare two strings for match validation.</p>
+
+    <h2>Key Features</h2>
+    <ul class="features">
+      <li>Identify hash type (MD5, SHA1, SHA256, SHA512, etc.)</li>
+      <li>Generate hashes from plain text input</li>
+      <li>Compare two hashes to check for equality</li>
+      <li>Hash Lookup option (reverse using known databases)</li>
+      <li>No login, no tracking – 100% client-side & private</li>
+      <li>Works perfectly on desktop and mobile devices</li>
+    </ul>
+
+    <p style="margin-top: 30px;">If you have any feedback or feature requests, feel free to reach out via our <a href="support.html">Support</a> page. We are actively developing new tools for cryptographic analysis.</p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Hash Identifier. All rights reserved.
+  </footer>
+
+</body>
+</html>

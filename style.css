@@ -1,0 +1,140 @@
+<style>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hash Identifier – Detect Hash Types Instantly</title>
+  <meta name="description" content="Free online tool to identify hash types like MD5, SHA-1, SHA-256, bcrypt, and more. Fast and accurate hash detection."/>
+  <meta name="keywords" content="hash identifier, hash type detector, MD5, SHA-1, SHA-256, hash lookup, online hash tool"/>
+  <meta name="author" content="Hash Identifier Team"/>
+
+  <!-- Open Graph (for social sharing) -->
+  <meta property="og:title" content="Hash Identifier – Detect Hash Types Instantly" />
+  <meta property="og:description" content="Identify hash types like MD5, SHA-1, SHA-256, and more in seconds." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.com/" />
+  <meta property="og:image" content="https://yourdomain.com/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hash Identifier – Detect Hash Types Instantly" />
+  <meta name="twitter:description" content="Identify hash types like MD5, SHA-1, SHA-256, and more in seconds." />
+  <meta name="twitter:image" content="https://yourdomain.com/og-image.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header and nav styles */
+    header {
+      background-color: #222;
+      color: white;
+      padding: 30px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    nav {
+      position: relative;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-size: 16px;
+      position: relative;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Dropdown menu */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 10px 16px;
+      display: block;
+      text-align: left;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #444;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Main content */
+    .container {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    input[type="text"] {
+      width: 80%;
+      max-width: 500px;
+      padding: 10px;
+      font-size: 16px;
+      margin: 20px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    #result {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #222;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #222;
+        color: white;
+        text-align: center;
+        padding: 10px 20px;
+        z-index: 10;
+      }
+      
+  </style>
